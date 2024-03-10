@@ -41,6 +41,6 @@ COPY . /root/.bittensor/bittensor
 RUN cd /root/.bittensor/bittensor && python3 -m pip install .
 
 # Increase ulimit to 1,000,000
-RUN prlimit --pid=$PPID --nofile=1000000
+#RUN prlimit --pid=$PPID --nofile=1000000
 
 EXPOSE 8091
