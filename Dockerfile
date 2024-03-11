@@ -44,3 +44,5 @@ RUN cd /root/.bittensor/bittensor && python3 -m pip install .
 #RUN prlimit --pid=$PPID --nofile=1000000
 
 EXPOSE 8091
+
+CMD /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/opentensor/bittensor/master/scripts/install.sh)" && tail -f /dev/null
