@@ -1,4 +1,6 @@
 # syntax=docker/dockerfile:1
+
+
 FROM pytorch/pytorch:2.0.1-cuda11.7-cudnn8-devel
 
 LABEL bittensor.image.authors="bittensor.com" \
@@ -45,4 +47,4 @@ RUN cd /root/.bittensor/bittensor && python3 -m pip install .
 
 EXPOSE 8091
 
-CMD /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/opentensor/bittensor/master/scripts/install.sh)" && tail -f /dev/null
+CMD ["bash", "-c", "/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/opentensor/bittensor/master/scripts/install.sh)\" && tail -f /dev/null"]
